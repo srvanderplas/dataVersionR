@@ -2,10 +2,7 @@ Package: dataVersionR
 Type: Package
 Title: Functions for versioning of data
 Version: 0.1.0
-Author: Susan Vanderplas
-Authors@R: c(
-    person("Susan", "Vanderplas", email = "srvander@iastate.edu", role = c("aut", "cre"))
-    )
+Authors@R: person("Susan", "Vanderplas", email = "srvander@iastate.edu", role = c("aut", "cre"))
 Maintainer: Susan Vanderplas <srvander@iastate.edu>
 Description: Hashes R objects to establish whether downstream results need to be
     recomputed.

@@ -16,7 +16,9 @@ RoxygenNote: 6.0.1
 Imports: 
     magrittr
 Depends:
-    stringr
+    stringr,
+    digest,
+    purrr
 Suggests: 
     testthat,
     covr

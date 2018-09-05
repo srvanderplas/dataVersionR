@@ -3,6 +3,7 @@
 #' @param ... values
 #' @return a hash of the provided values
 #' @example hash_scalar(rnorm(100))
+#' @importFrom digest digest
 hash_scalar <- function(...) {
   x <- list(...)
 
@@ -18,6 +19,7 @@ hash_scalar <- function(...) {
 #' @param ... values
 #' @return a vector of hashed values (if ... all have the same length), a scalar otherwise
 #' @export
+#' @importFrom purrr pmap_chr
 hash_precursor <- function(...) {
   x <- list(...)
   x_len <- lapply(x, length) %>% unlist()
@@ -67,7 +69,6 @@ precursor_hash_changed <- function(data_file_path, ..., precursor_hash = NULL) {
 #' @param ... values to hash - unnecessary if precursor_hash is not null
 #' @param precursor_hash hash of values to compare to hash saved in data_file_path.hash
 #' @export
-#' @importFrom stringr str_trim
 precursor_hash_write <- function(data_file_path, ..., precursor_hash = NULL) {
   if (is.null(precursor_hash)) {
     stopifnot(length(list(...)) > 0)
